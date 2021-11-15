@@ -1,0 +1,122 @@
+.registration {
+  width: 100%;
+  color: #333;
+  .our-story-header-wrapper {
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .sign-in-link {
+    cursor: pointer;
+    color: #333;
+    background-color: transparent !important;
+    font-weight: bold;
+    font-size: 19px !important;
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+  }
+  .footer {
+    .select-wrap {
+      .lang-selector {
+        select {
+          background-color: white !important;
+          color: #aaa;
+        }
+      }
+    }
+  }
+  .sign-up-form {
+    margin-top: 56px !important;
+    margin-bottom: 95px !important;
+    margin: 0 auto;
+    max-width: 440px;
+    .title {
+      font-size: 23px;
+      font-weight: bolder;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+    .opt-out {
+      padding: 16px;
+      display: flex;
+      .text {
+        width: 100%;
+      }
+    }
+    .next {
+      width: 100%;
+      height: 60px;
+      font-size: 16px !important;
+    }
+    .check {
+      width: fit-content;
+      display: flex;
+      padding-right: 16px;
+
+      input {
+        position: relative;
+        top: 0;
+        left: -10px;
+        transform: scale(2);
+      }
+    }
+
+    .name-wrapper,
+    .password-wrapper {
+      margin-bottom: 16px;
+    }
+    .email-input,
+    .password-input,
+    .name-input {
+      position: relative;
+      input {
+        font-size: 16px;
+        border: 1px solid #aaa;
+        width: 100%;
+        padding-left: 8px;
+        height: 60px;
+        position: relative;
+      }
+      .label {
+        position: absolute;
+        left: 10px;
+        top: 22px;
+        pointer-events: none;
+        transition: 0.2s ease all;
+        color: #8c8c8c;
+      }
+      input:focus ~ .label,
+      input:not(:focus):valid ~ .label {
+        top: 4px;
+        bottom: 10px;
+        left: 10px;
+        font-size: 11px;
+        font-weight: bolder !important;
+        opacity: 1;
+      }
+    }
+  }
+}
+.border-green {
+  border: 1px solid #5fa53f !important;
+}
+.border-red {
+  border: 1px solid red !important;
+}
+.sign-up-validation {
+  position: relative;
+  top: 8px !important;
+  color: red;
+}
+.footer-bg {
+  background-color: #f3f3f3;
+  border-top: 1px solid #e5e5e5;
+}
+
+.auth-footer {
+  margin: 0;
+  max-width: 1000px;
+}

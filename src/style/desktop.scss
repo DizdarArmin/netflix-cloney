@@ -1,0 +1,37 @@
+@media only screen and (min-width: $desktop-min) {
+  .our-story-card-title {
+    font-size: 4rem !important;
+  }
+  .our-story-card-subtitle,
+  .our-story-card-text {
+    font-size: 1.25rem !important;
+  }
+  .logo {
+    width: 10.4375rem !important;
+    height: 2.8125rem !important;
+  }
+  .lang-selector {
+    margin-right: 2rem;
+  }
+  .email-form {
+    flex-direction: row;
+  }
+
+  .animation {
+    .image {
+      img {
+        height: 5em;
+      }
+    }
+  }
+  .text-container {
+    padding: 0 0 0 3rem !important;
+  }
+  .footer {
+    .links {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+@media only screen and (min-width: $desktop-min) and (max-width: $desktop-max) {
+}

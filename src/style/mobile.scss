@@ -1,0 +1,62 @@
+@media only screen and (max-width: $mobile-max) {
+  .lang-selector {
+    select {
+      padding: 0.25rem 1.375rem;
+    }
+  }
+  .hero-wrapper {
+    padding: 15px 0;
+  }
+  .our-story-card {
+    position: relative;
+    padding: 50px 5%;
+  }
+  .our-story-card-title {
+    font-size: 1.625rem !important;
+  }
+  .our-story-card-subtitle,
+  .our-story-card-text {
+    font-size: 1.125rem !important;
+  }
+
+  .our-story-header {
+    margin: 0 5%;
+  }
+  .red-button {
+    padding: 0.25rem 0.5rem;
+  }
+  .hero h3 {
+    max-width: 450px;
+  }
+
+  .email-form {
+    align-items: center;
+    .red-button {
+      display: flex;
+      height: fit-content !important;
+      padding: 8px 16px !important;
+    }
+  }
+  .watchOnTv {
+    flex-direction: column;
+  }
+  .downloadAndWatch,
+  .kids {
+    flex-direction: column-reverse;
+  }
+
+  .downloadAndWatch,
+  .watchOnTv,
+  .kids {
+    .text-container {
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  .footer {
+    .links {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

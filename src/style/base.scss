@@ -1,0 +1,38 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./home.scss";
+@import "./widescreen.scss";
+@import "./mobile.scss";
+@import "./tablet.scss";
+@import "./desktop.scss";
+@import "./signup.scss";
+
+@font-face {
+  font-family: "Netflix";
+  src: local("Netflix") url(./font//NetflixSansRegular.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-size: 0.9rem !important;
+  border: none;
+}
+
+h1 {
+}
+h2,
+h3 {
+  font-weight: 400;
+}

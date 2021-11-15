@@ -1,0 +1,67 @@
+@media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .our-story-card-title {
+    font-size: 3.125rem !important;
+  }
+  .our-story-card-subtitle,
+  .our-story-card-text {
+    font-size: 1.625rem !important;
+  }
+
+  .logo {
+    width: 6.75rem;
+    height: 2rem;
+  }
+  .our.story-header {
+    margin: 0 45px !important;
+  }
+
+  .lang-selector {
+    margin-right: 2rem;
+  }
+  .email-form {
+    align-items: center;
+    .red-button {
+      display: flex;
+      height: fit-content !important;
+      padding: 8px 16px !important;
+    }
+  }
+  .watchOnTv {
+    flex-direction: column;
+  }
+  .downloadAndWatch,
+  .kids {
+    flex-direction: column-reverse;
+  }
+
+  .downloadAndWatch,
+  .watchOnTv,
+  .kids {
+    .text-container {
+      padding: 0;
+      text-align: center;
+    }
+  }
+  .footer {
+    .links {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media only screen and (min-width: $tablet-min) {
+  .email-form {
+    .red-button {
+      font-size: 1.625rem;
+    }
+  }
+  .email-wrap {
+    input {
+      height: 60px !important;
+    }
+  }
+
+  .animation::after {
+    height: 3.75em;
+  }
+}

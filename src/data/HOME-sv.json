@@ -1,0 +1,77 @@
+{
+  "email": "E-post",
+  "password": "Lägg till ett lösenord",
+  "name": "Namn",
+  "signIn": "Logga in",
+  "heroTitle": "Obegränsat med filmer, serier och annat.",
+  "heroSubtitle": "Titta var du vill. Avsluta när du vill.",
+  "emailRequired": "E-postadress krävs!",
+  "emailInvalid": "Ange en giltig e-postadress.",
+  "formText": "Redo att börja titta? Ange din e-postadress för att skapa eller återaktivera ett konto.",
+  "startButton": "Kom igång",
+  "tvTitle": "Titta på din tv.",
+  "tvSubtitle": "Titta på smart-tv-apparater, Playstation, Xbox, Chromecast, Apple TV, Blu-ray-spelare och många fler.",
+  "downloadTitle": "Ladda ner dina serier och titta offline.",
+  "downloadSubtitle": "Spara dina favoriter så har du alltid något att titta på.",
+  "downloading": "Laddar ner...",
+  "devicesTitle": "Titta var som helst.",
+  "devicesSubtitle": "Streama obegränsat med filmer och serier på mobil, surfplatta, dator och tv utan att betala extra.",
+  "kidsTitle": "Skapa profiler för barn.",
+  "kidsSubtitle": "Skicka ut barnen på äventyr med sina favoritkaraktärer i en profil som bara är till för dem och som ingår gratis i ditt abonnemang.",
+  "faq": {
+    "name": "Vanliga frågor och svar",
+    "items": [
+      {
+        "question": "Vad är Netflix?",
+        "answer": [
+          "Netflix är en streamingtjänst som erbjuder ett stort utbud av prisbelönta serier, filmer, anime, dokumentärer och mycket mer på tusentals internetanslutna enheter.",
+          "Du kan titta så mycket du vill, när du vill och utan ett enda reklamavbrott – allt för en låg månadskostnad. Det finns alltid något nytt att upptäcka, och nya serier och filmer läggs till varje vecka!"
+        ]
+      },
+      {
+        "question": "Hur mycket kostar Netflix?",
+        "answer": [
+          "Titta på Netflix på din smartphone, surfplatta, smart-tv, bärbara dator eller streamingenhet – allt för en fast månadsavgift. Abonnemang från 99 kr till 179 kr per månad. Inga ytterligare kostnader, inga bindningstider."
+        ]
+      },
+      {
+        "question": "Var kan jag titta?",
+        "answer": [
+          "Titta var du vill, när du vill. Logga in med ditt Netflix-konto för att titta direkt på webben på netflix.com från din dator eller någon annan enhet som har Netflix-appen, till exempel smart-tv-apparater, smartphones, surfplattor, streamingspelare och spelkonsoler.",
+          "Du kan också ladda ner dina favoritserier med iOS-, Android- eller Windows 10-appen. Använd nerladdningar för att titta när du är på språng eller saknar internetanslutning. Ta med dig Netflix överallt."
+        ]
+      },
+      {
+        "question": "Hur gör jag för att avsluta?",
+        "answer": [
+          "Netflix är flexibelt. Det finns inga krångliga kontrakt och inga förpliktelser. Du kan enkelt avsluta ditt konto online med två klick. Det finns inga uppsägningsavgifter – starta eller avsluta ditt konto när som helst."
+        ]
+      },
+      {
+        "question": "Vad kan jag se på Netflix?",
+        "answer": [
+          "Netflix har ett stort bibliotek med filmer, dokumentärer, serier, anime, prisbelönt originalinnehåll från Netflix och mycket annat. Titta så mycket du vill, när du vill."
+        ]
+      },
+      {
+        "question": "Passar Netflix för barn?",
+        "answer": [
+          "Netflix för barn ingår i ditt abonnemang så att du som förälder har kontroll över innehållet samtidigt som barnen kan upptäcka familjevänliga serier och filmer i sin egen profil.",
+          "Barnprofiler har PIN-kodsskyddade föräldrakontroller där du kan sätta en åldersgräns för det innehåll barnen får titta på. Du kan även blockera specifika titlar som du inte vill att barnen ska se."
+        ]
+      }
+    ]
+  },
+  "signUpTitle": "Skapa ett lösenord för att starta ditt medlemskap",
+  "signUpSubtitle": [
+    "Bara några steg kvar – sedan är det klart!",
+    " Vi avskyr också pappersarbete."
+  ],
+  "emailLength": "E-postadressen måste bestå av mellan 5 och 50 tecken.",
+  "nameLength": "Namnet måste bestå av mellan 3 och 30 tecken",
+  "nameRequired": "Namnet krävs!",
+  "passwordRequired": "Lösenord krävs!",
+  "passwordLength": "Lösenordet måste bestå av mellan 6 och 60 tecken",
+  "optOut": "Skicka inte e-postmeddelanded till mig med specialerbjudanden från Netflix",
+  "signUpButton": "Nästa"
+}
