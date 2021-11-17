@@ -1,0 +1,50 @@
+.login {
+  object-fit: cover;
+  min-width: 280px;
+
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.9) 0,
+      rgba(0, 0, 0, 0.5) 60%,
+      rgba(0, 0, 0, 0.9) 100%
+    ),
+    url("../images/hero.jpg");
+
+  height: 100%;
+
+  .our-story-header-wrapper {
+    border: none;
+  }
+}
+.login-form {
+  position: relative;
+
+  margin-top: -110px !important;
+  min-height: 550px;
+  min-width: 280px;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  color: white;
+
+  max-width: 450px;
+  padding: 48px !important;
+
+  .title {
+    font-size: 32px !important;
+  }
+  .email-input,
+  .password-input {
+    position: relative;
+    input {
+      background-color: #333;
+      border-radius: 4px;
+      border-color: transparent !important;
+    }
+  }
+
+  .email-wrapper {
+    .sign-up-validation {
+      color: orange;
+    }
+  }
+}

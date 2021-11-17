@@ -25,8 +25,8 @@ export default function Email({ language, hook }) {
     }
   }
   return (
-    <div className="password-wrapper">
-      <div className="password-input">
+    <div className="email-wrapper">
+      <div className="email-input">
         <input
           name="email"
           className={borderClass}

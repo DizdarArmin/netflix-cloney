@@ -3,13 +3,19 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RecoilRoot } from "recoil";
+import { AuthProvider } from "./state/AuthContext";
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
-  <RecoilRoot>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </RecoilRoot>,
+  <React.StrictMode>
+    <AuthProvider>
+      <RecoilRoot>
+        <Router>
+          <App />
+        </Router>
+      </RecoilRoot>
+    </AuthProvider>
+  </React.StrictMode>,
   document.getElementById("root")
 );
 

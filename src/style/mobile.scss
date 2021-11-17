@@ -59,4 +59,21 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
+  .login-form {
+    position: absolute;
+    padding: -100px !important;
+    padding-top: -100px !important;
+
+    background-color: black !important;
+    height: 100vh !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+
+  .manage-container {
+    .header {
+      flex-direction: column;
+    }
+  }
 }

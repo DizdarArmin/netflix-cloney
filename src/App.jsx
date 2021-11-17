@@ -1,21 +1,33 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import "./style/base.scss";
-import Home from "./views/Home";
 import { useRecoilState } from "recoil";
-import { language } from "./components/Atom";
+import { useRoutes } from "react-router-dom";
 import { useEffect, useState } from "react";
+
+import { language } from "./components/Atom";
 import { load } from "./scripts/LocalStorage";
-import en from "./data/HOME-en.json";
-import sv from "./data/HOME-sv.json";
-import SignUp from "./views/SignUp";
+import { useAuth } from "./state/AuthContext";
+import useDocument from "./hooks/useDocument";
+import routes from "./routes/Routes";
 
 export default function App() {
+  const { currentUser, userData, setUserData } = useAuth();
+  const [id, setId] = useState(null);
   const [translation, setTranslation] = useRecoilState(language);
   const [localUrl, setLocalUrl] = useState("en");
   const local = load("language");
-  const signUpURL = `/signup-${localUrl}`;
-  const signUpEn = "/signup-en";
-  const signUpSv = "/signup-sv-en";
+
+  const routing = useRoutes(routes(currentUser, localUrl, userData));
+  const { document } = useDocument("users", id);
+
+  useEffect(() => {
+    if (currentUser) {
+      setId(currentUser.uid);
+    }
+  }, [currentUser]);
+
+  useEffect(() => {
+    setUserData(document);
+  }, [document]);
 
   useEffect(() => {
     if (local) {
@@ -26,16 +38,28 @@ export default function App() {
 
   return (
     <div>
-      <BrowserRouter>
+      {routing}
+      {/*   <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Navigate to={localUrl} />} />
           <Route path="/en" element={<Home language={en} />} />
           <Route path="/sv-en" element={<Home language={sv} />} />
-          <Route path="/signup" element={<Navigate replace to={signUpURL} />} />
+
+          <Route path="/signup" element={<Navigate replace to={signUp} />} />
           <Route path="/signup-sv-en" element={<SignUp language={sv} />} />
           <Route path="/signup-en" element={<SignUp language={en} />} />
+
+          <Route path="/login" element={<Navigate replace to={login} />} />
+          <Route path="/login-sv-en" element={<Login language={sv} />} />
+          <Route path="/login-en" element={<Login language={en} />} />
+
+          <Route path="/browse" element={<Navigate replace to={browse} />} />
+
+          <Route path="/browse-sv-en" element={<Private />}>
+            <Route element={<Browse language={sv} />} />
+          </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }

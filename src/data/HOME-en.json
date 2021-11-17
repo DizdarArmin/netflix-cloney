@@ -74,5 +74,7 @@
   "passwordRequired": "Password is required.",
   "passwordLength": "Password should be between 6 and 60 characters long.",
   "optOut": "Please do not email me Netflix special offers.",
+  "finishTitle": "Finish setting up your account",
+  "finishSubtitle": "Netflix is personalised for you. Create a password to watch on any device at any time.",
   "signUpButton": "Next"
 }

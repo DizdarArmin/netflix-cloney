@@ -21,7 +21,7 @@ export default function Name({ language, hook }) {
     }
   }
   return (
-    <div className="name-wrapper" id="form">
+    <div className="name-wrapper">
       <div className="name-input">
         <input
           autoFocus

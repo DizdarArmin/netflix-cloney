@@ -1,8 +1,8 @@
 import LangSelect from "./LangSelect";
 
-export default function Footer() {
+export default function Footer({ bgColor, page }) {
   return (
-    <div className="footer-bg">
+    <div className={bgColor}>
       <footer className="footer auth-footer">
         <div className="title">Questions? Call 0720097143</div>
         <div className="links">
@@ -24,7 +24,7 @@ export default function Footer() {
           </span>
         </div>
         <div className="select-wrap">
-          <LangSelect />
+          <LangSelect page={page} />
         </div>
       </footer>
     </div>

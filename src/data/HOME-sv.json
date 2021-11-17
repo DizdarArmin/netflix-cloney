@@ -73,5 +73,7 @@
   "passwordRequired": "Lösenord krävs!",
   "passwordLength": "Lösenordet måste bestå av mellan 6 och 60 tecken",
   "optOut": "Skicka inte e-postmeddelanded till mig med specialerbjudanden från Netflix",
+  "finishTitle": "Slutför registreringen av ditt konto",
+  "finishSubtitle": "Netflix är personligt anpassat för dig. Skapa ett lösenord för att titta på vilken enhet du vill, när du vill.",
   "signUpButton": "Nästa"
 }

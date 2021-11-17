@@ -6,7 +6,9 @@
 @import "./tablet.scss";
 @import "./desktop.scss";
 @import "./signup.scss";
-
+@import "./login.scss";
+@import "./browser.scss";
+@import "./manage.scss";
 @font-face {
   font-family: "Netflix";
   src: local("Netflix") url(./font//NetflixSansRegular.ttf);
@@ -35,4 +37,17 @@ h1 {
 h2,
 h3 {
   font-weight: 400;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px $netflix-red;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  height: 1%;
+
+  border-radius: 10px;
 }

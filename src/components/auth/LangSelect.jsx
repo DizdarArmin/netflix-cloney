@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 
 import { save } from "../../scripts/LocalStorage";
 
-export default function LangSelect() {
+export default function LangSelect({ page }) {
   const navigate = useNavigate();
   const [translation, setTranslation] = useRecoilState(local);
 
   function setLang(e) {
     setTranslation(e.target.value);
     save("language", e.target.value);
-    navigate(`/signup-${e.target.value}`);
+    navigate(`/${page}-${e.target.value}`);
     window.location.reload();
   }
   return (

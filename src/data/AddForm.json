@@ -1,0 +1,50 @@
+{
+  "name": { "label": "Name", "type": "text", "placeholder": "Untitled" },
+  "publish": { "label": "Published", "type": "checkbox" },
+  "trailer": {
+    "label": "Trailer",
+    "type": "text",
+    "placeholder": "https://www.youtube.com/watch?v=N6HGuJC--rk"
+  },
+
+  "genres": {
+    "label": "Genre",
+    "type": "text",
+    "placeholder": "Thriller, Action"
+  },
+  "about": { "label": "About", "type": "text", "placeholder": "Intimate" },
+  "video": {
+    "label": "Video",
+    "type": "text",
+    "placeholder": "https://www.youtube.com/watch?v=JcyE2dbm1HQ"
+  },
+  "description": {
+    "label": "Description",
+    "type": "text",
+    "placeholder": "Description"
+  },
+  "cast": {
+    "label": "Cast",
+    "type": "text",
+    "placeholder": "Armin Dizdar, Clement Cardona, Dakouri Maurille, Kobri Emmanuel Imhontu, Giang Ngo Hong, Hassan Obeid, Marcela Fortis ,Natalia Fedorova , Olga Pinchuck,  SaiLatha Snehal Kadam"
+  },
+  "year": {
+    "label": "Year",
+    "type": "number",
+    "min": 1900,
+    "max": 2030,
+    "placeholder": 1992
+  },
+  "ageLimit": {
+    "label": "Age limit",
+    "type": "number",
+    "min": 0,
+    "max": 21,
+    "placeholder": 6
+  },
+  "director": {
+    "label": "Director",
+    "type": "text",
+    "placeholder": "Armin Dizdar"
+  }
+}

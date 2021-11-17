@@ -1,0 +1,227 @@
+.manage {
+  min-width: 280px;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+.title-container {
+  min-height: 100vh;
+}
+
+.manage-container {
+  min-width: 280px;
+  max-width: 1100px;
+  margin: 0 auto;
+  .controls {
+    display: flex;
+    justify-content: center;
+    button {
+      background-color: $netflix-red;
+      color: white;
+      width: 30%;
+      font-size: 22px !important;
+      margin: 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        filter: brightness(60%);
+      }
+    }
+  }
+  .category-pick {
+    margin: 8px;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    appearance: none;
+    font-size: 24px;
+    height: 60px;
+    width: 70%;
+    background-color: #333;
+    color: white;
+    option {
+      background-color: #333;
+    }
+  }
+}
+
+.media-cards {
+  padding: 24px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.title-container {
+  width: 100%;
+  padding: 16px;
+  .buttons,
+  .btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    button {
+      cursor: pointer;
+      width: 40%;
+      height: 44px;
+      border-radius: 5px;
+      margin: 4px;
+    }
+    .red-button {
+      border: 1px solid $netflix-red !important;
+    }
+  }
+}
+.outline-button {
+  color: white;
+
+  background-color: transparent;
+  border: 1px solid white;
+}
+.manage-title,
+.manage-add {
+  color: white;
+  .manage-container {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+
+      input {
+        padding: 8px !important;
+        font-size: 16px;
+      }
+      textarea {
+        padding: 8px !important;
+        resize: none;
+        height: 150px;
+        font-size: 16px;
+      }
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 120px;
+      height: 100%;
+
+      div {
+        margin: 0 auto;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        max-width: 250px;
+
+        justify-content: center;
+
+        img {
+          max-height: 120px;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .form {
+      div {
+        progress {
+          width: 100%;
+          -webkit-appearance: none;
+        }
+
+        ::-webkit-progress-bar {
+          background-color: black;
+        }
+
+        img {
+          margin: 0 auto;
+          width: 100%;
+        }
+      }
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-gap: 1rem;
+      align-items: start;
+    }
+  }
+}
+
+.publish {
+  height: 60px;
+  padding: 8px;
+  flex-direction: row-reverse !important;
+  align-items: center;
+  justify-content: center;
+  input {
+    transform: scale(1.5);
+    margin-right: 8px !important;
+  }
+}
+
+.add-series {
+  min-height: 100vh;
+  .bottom {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-gap: 1rem;
+    align-items: start;
+  }
+  .form {
+    label {
+      select {
+        background-color: #333;
+        border: none;
+        color: white;
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.bottom {
+  .wrapp {
+    .btns {
+      display: flex;
+      label,
+      button {
+        flex: 1;
+      }
+    }
+  }
+}
+.title-container,
+.add-series,
+div {
+  .form,
+  .bottom {
+    label {
+      input,
+      textarea {
+        background-color: #333;
+        border: none;
+        color: white;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+.add-series {
+  label {
+    input,
+    textarea {
+      background-color: #333;
+      border: none;
+      color: white;
+      border-radius: 5px;
+    }
+  }
+}
