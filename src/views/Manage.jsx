@@ -7,7 +7,6 @@ import Navbar from "../components/home/Navbar";
 import useCollection from "../hooks/useCollection";
 import { draftCreator } from "../scripts/crud";
 import html from "../data/AddForm.json";
-import { getReference } from "../scripts/storage";
 
 export default function Manage() {
   const { category } = useParams();

@@ -12,7 +12,7 @@ import routes from "./routes/Routes";
 export default function App() {
   const { currentUser, userData, setUserData } = useAuth();
   const [id, setId] = useState(null);
-  const [translation, setTranslation] = useRecoilState(language);
+  const [, setTranslation] = useRecoilState(language);
   const [localUrl, setLocalUrl] = useState("en");
   const local = load("language");
 
@@ -36,30 +36,5 @@ export default function App() {
     }
   }, [local]);
 
-  return (
-    <div>
-      {routing}
-      {/*   <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Navigate to={localUrl} />} />
-          <Route path="/en" element={<Home language={en} />} />
-          <Route path="/sv-en" element={<Home language={sv} />} />
-
-          <Route path="/signup" element={<Navigate replace to={signUp} />} />
-          <Route path="/signup-sv-en" element={<SignUp language={sv} />} />
-          <Route path="/signup-en" element={<SignUp language={en} />} />
-
-          <Route path="/login" element={<Navigate replace to={login} />} />
-          <Route path="/login-sv-en" element={<Login language={sv} />} />
-          <Route path="/login-en" element={<Login language={en} />} />
-
-          <Route path="/browse" element={<Navigate replace to={browse} />} />
-
-          <Route path="/browse-sv-en" element={<Private />}>
-            <Route element={<Browse language={sv} />} />
-          </Route>
-        </Routes>
-      </BrowserRouter> */}
-    </div>
-  );
+  return <div>{routing}</div>;
 }

@@ -5,11 +5,7 @@ import Select from "./Select";
 import TextArea from "./TextArea";
 import ReactPlayer from "react-player";
 import Checkbox from "./Checkbox";
-import {
-  createDocumentWithId,
-  removeDocument,
-  updateDocument,
-} from "../../scripts/fireStore";
+import { createDocumentWithId, removeDocument } from "../../scripts/fireStore";
 import { useState, useEffect } from "react";
 import useDocument from "../../hooks/useDocument";
 export default function Series({ id }) {
@@ -20,7 +16,6 @@ export default function Series({ id }) {
   const [video, setVideo] = useState();
   const [description, setDescription] = useState();
   const [editEpisode, setEditEpisode] = useState({});
-  const [reload, setReload] = useState(true);
 
   const { document } = useDocument(
     `/series/${id}/seasons`,

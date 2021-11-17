@@ -7,6 +7,10 @@ export default function Modal({ children, hook }) {
   return ReactDom.createPortal(
     <div className="overlay-style" onClick={() => setShowModal(false)}>
       <div onClick={(e) => e.stopPropagation()} className="modal-style">
+        <i
+          onClick={() => setShowModal(false)}
+          className="fas fa-times-circle"
+        />
         {children}
       </div>
     </div>,

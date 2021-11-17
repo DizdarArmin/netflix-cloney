@@ -3,6 +3,7 @@ import { useEffect } from "react/cjs/react.development";
 export default function Search({ search, setSearch }) {
   const [isSearching, setSearching] = useState(false);
   const [expandSearch, setExpand] = useState("");
+
   useEffect(() => {
     if (isSearching) {
       setExpand("expand-search");
@@ -10,6 +11,7 @@ export default function Search({ search, setSearch }) {
       setExpand("reduce-search");
     }
   }, [isSearching]);
+
   return (
     <div className="search" onBlur={() => setSearching(false)}>
       {isSearching && (

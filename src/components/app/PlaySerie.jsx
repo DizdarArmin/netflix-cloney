@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import useDocument from "../../hooks/useDocument";
 
 export default function PlaySerie() {
-  const { from, file, id } = useParams();
+  const { from, file } = useParams();
   const [media, setMedia] = useState([]);
   const { document } = useDocument(from, file);
 

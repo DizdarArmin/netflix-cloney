@@ -1,4 +1,3 @@
-import useCollection from "../../hooks/useCollection";
 import useQueryCollection from "../../hooks/useQueryCollection";
 import { useEffect, useState, useRef } from "react";
 import Card from "./Card";
@@ -44,7 +43,7 @@ export default function Row({ category, search }) {
         <Left setDirection={setDirection} />
         <div className="row" ref={ref}>
           {media.map((item) => (
-            <Card item={item} setDirection={setDirection} />
+            <Card key={item.name} item={item} setDirection={setDirection} />
           ))}
         </div>
         <Right setDirection={setDirection} />

@@ -20,14 +20,12 @@ export default function DetailedCard({ item }) {
   }, [collection]);
 
   function play() {
-    alert(item.category);
     navigate(`/play-${item.category}-${item.id}`);
   }
   return (
     <div className="details">
       <ReactPlayer
         loop
-        borderRadius
         style={{
           transform: "scale(1.8)",
         }}
@@ -41,13 +39,6 @@ export default function DetailedCard({ item }) {
         {media && <Series item={item} />}
         <CardAbout item={item} />
       </div>
-
-      {/*  <select>
-        {media && media.map((item) => <option>{item.season}</option>)}
-      </select>
-      <button onClick={test}></button>
-
-      {media && media.map((item) => <h3>{item.episode}</h3>)} */}
     </div>
   );
 }

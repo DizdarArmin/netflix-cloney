@@ -1,15 +1,22 @@
+import { useState } from "react";
+import Modal from "../Modal";
+import DetailedCard from "./DetailedCard";
 import Mute from "./Mute";
-export default function HeroButtons({ play, sound, setSound }) {
+export default function HeroButtons({ play, sound, setSound, hero }) {
+  const [modal, setModal] = useState(false);
   return (
     <div className="hero-buttons">
       <div className="left-side">
         <div className="play" onClick={play}>
-          <i class="fas fa-play" />
+          <i className="fas fa-play" />
           Play
         </div>
-        <div className="info">
+        <div className="info" onClick={() => setModal(true)}>
           <i className="fas fa-info-circle" />
           More Info
+          <Modal hook={[modal, setModal]}>
+            <DetailedCard item={hero} />
+          </Modal>
         </div>
       </div>
       <div className="right-side">

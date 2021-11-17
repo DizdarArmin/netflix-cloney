@@ -1,5 +1,4 @@
 import { removeDocument } from "../../scripts/fireStore";
-import { removeFile } from "../../scripts/storage";
 
 export default function ButtonDelete({ hook }) {
   const [navigate, category, id, imageRef] = hook;

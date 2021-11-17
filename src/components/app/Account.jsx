@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router";
 import { logout } from "../../scripts/authentication";
 import { useAuth } from "../../state/AuthContext";
 import { useState } from "react";
@@ -7,12 +6,6 @@ export default function Account() {
   const { userData } = useAuth();
   const [accountHover, setAccountHover] = useState("");
   const [showDropDown, setShowDropDown] = useState(false);
-  const navigate = useNavigate();
-
-  function onLogout() {
-    logout();
-    navigate("/");
-  }
 
   function onEnter() {
     setAccountHover("onEnterHover");

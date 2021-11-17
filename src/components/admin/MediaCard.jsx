@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router";
-export default function MediaCard({ item, parent }) {
+export default function MediaCard({ item }) {
   const navigate = useNavigate();
   const { category } = useParams();
   function onClick() {

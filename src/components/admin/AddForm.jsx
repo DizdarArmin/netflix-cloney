@@ -13,7 +13,6 @@ import ButtonBack from "./ButtonBack";
 
 import Header from "./Header";
 import ButtonDelete from "./ButtonDelete";
-import Series from "./Series";
 
 export default function AddForm({ document }) {
   const { category, id } = useParams();

@@ -1,7 +1,6 @@
 import Footer from "../components/auth/Footer";
 import LoginForm from "../components/auth/LoginForm";
 import Navbar from "../components/home/Navbar";
-import hero from "../images/hero.jpg";
 export default function Login({ language }) {
   return (
     <div className="login  ">
