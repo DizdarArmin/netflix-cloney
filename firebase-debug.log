@@ -1,0 +1,31 @@
+[debug] [2021-11-17T23:10:44.583Z] ----------------------------------------------------------------------
+[debug] [2021-11-17T23:10:44.586Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
+[debug] [2021-11-17T23:10:44.586Z] CLI Version:   9.18.0
+[debug] [2021-11-17T23:10:44.586Z] Platform:      linux
+[debug] [2021-11-17T23:10:44.587Z] Node Version:  v12.21.0
+[debug] [2021-11-17T23:10:44.589Z] Time:          Thu Nov 18 2021 00:10:44 GMT+0100 (Central European Standard Time)
+[debug] [2021-11-17T23:10:44.589Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-17T23:10:44.647Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-17T23:10:44.647Z] > authorizing via signed-in user (armin.dizdar@gmail.com)
+[debug] [2021-11-17T23:10:44.647Z] [iam] checking project netflix-cloney for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-11-17T23:10:44.650Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-17T23:10:44.650Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-17T23:11:04.701Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-11-17T23:11:04.706Z] > refreshing access token with scopes: []
+[debug] [2021-11-17T23:11:04.707Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-17T23:11:24.728Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-11-17T23:11:44.752Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (/usr/local/lib/node_modules/firebase-tools/lib/auth.js:141:12)
+    at refreshTokens (/usr/local/lib/node_modules/firebase-tools/lib/auth.js:448:15)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: Failed to get Firebase project netflix-cloney. Please make sure the project exists and your account has permission to access it.
