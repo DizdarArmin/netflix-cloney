@@ -11,6 +11,18 @@ import Title from "../views/Title";
 import Add from "../views/Add";
 import PlaySerie from "../components/app/PlaySerie";
 
+/**
+ * Function length -1, abstraction -5
+ *
+ * This component is too long but must importantly you aren't taking the Big O Notation into consideration. (https://www.youtube.com/watch?v=g2o22C3CRfU)
+ * What happens if we need to add another language say Danish, this compoment will be 33% longer, then another language and so on.
+ *
+ * The solution is to have language as a global state that handles that.
+ * The -5 does not mean literally 5 points of the possible 100 point we grade. It means a error that is quite important when i go back and decide the grading.
+ *
+ *
+ * Also, you should not create a folder for a single file. If you consider Router equally important as App, you put it next to it, otherwise inside the components folder.
+ */
 const routes = (isLogged, localUrl, userData) => [
   //HOME
 

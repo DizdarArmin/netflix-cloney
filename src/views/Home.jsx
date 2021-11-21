@@ -9,6 +9,13 @@ import FAQ from "../components/home/FAQ";
 import GetStarted from "../components/home/GetStarted";
 import Footer from "../components/home/Footer";
 
+/**
+ * Architecture -5, Coupling, -1
+ * What is  "Architecture" and why is taking even more points?
+ * Simple it means the overall design (from the structural point of view not from the aesthetics point of view) needs a revision.
+ * If EVERY component needs a prop called language, then we need to step back and say how we can remove this depency,
+ * because if for some reason the prop language breaks (example: is set to null by mistake) not 1 or 2 but LITERALLY the whole app breaks.
+ */
 export default function Home({ language }) {
   return (
     <div className="home container">

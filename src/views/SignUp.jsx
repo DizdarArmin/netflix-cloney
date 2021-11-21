@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export default function SignUp({ language }) {
   const [toggle, setToggle] = useState(false);
+
   return (
     <div className="registration">
       <Navbar>

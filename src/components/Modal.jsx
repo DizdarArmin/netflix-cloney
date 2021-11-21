@@ -1,5 +1,6 @@
 import ReactDom from "react-dom";
 
+// I was not able to open the modals in the project...
 export default function Modal({ children, hook }) {
   const [modal, setShowModal] = hook;
 

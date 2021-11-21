@@ -15,6 +15,7 @@ export default function Title() {
 
   return (
     <div className="manage-title">
+      {/* User <Navbar/> instead */}
       <Navbar></Navbar>
       <div className="manage-container">
         <AddForm document={title} />
