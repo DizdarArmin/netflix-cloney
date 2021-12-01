@@ -3,13 +3,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import useDocument from "../../hooks/useDocument";
 
-export default function PlaySerie() {
-  const { id, season, episode } = useParams();
+export default function PlayMovie() {
+  const { from, file } = useParams();
   const [media, setMedia] = useState([]);
-  const { document } = useDocument(
-    `/series/${id}/seasons/${season}/episodes`,
-    episode
-  );
+  const { document } = useDocument(from, file);
 
   useEffect(() => {
     setMedia(document);
@@ -17,7 +14,6 @@ export default function PlaySerie() {
 
   return (
     <div className="full">
-      sdfsd
       <ReactPlayer
         playing={true}
         width="100%"

@@ -6,7 +6,7 @@ export default function MediaCard({ item }) {
     navigate(`/manage-${category}/${item.id}`);
   }
   return (
-    <div className="media-card" onClick={onClick}>
+    <div className="media-card admin-card" onClick={onClick}>
       <img src={item.thumbnail} alt={item.name} />
       <h3>{item.name}</h3>
     </div>

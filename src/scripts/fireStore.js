@@ -1,4 +1,4 @@
-import { collection, where, deleteDoc } from "@firebase/firestore/lite";
+import { collection, where, deleteDoc, limit } from "@firebase/firestore/lite";
 import { addDoc, setDoc, updateDoc, getDoc } from "@firebase/firestore/lite";
 import { doc, getDocs, query, serverTimestamp } from "@firebase/firestore/lite";
 
@@ -35,13 +35,20 @@ export async function getCollection(path) {
   return list;
 }
 
-export async function getQueryCollection(path) {
+export async function getQueryCollection(path, amount) {
   const collectionReference = collection(fireStoreInstance, path);
-  const q = query(collectionReference, where("published", "==", true));
+
+  const q = query(
+    collectionReference,
+    where("published", "==", true),
+    limit(amount)
+  );
   const snapshot = await getDocs(q);
+
   const list = snapshot.docs.map((doc) => {
     return { id: doc.id, ...doc.data() };
   });
+
   return list;
 }
 

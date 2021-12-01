@@ -1,31 +1,33 @@
 import useQueryCollection from "../../hooks/useQueryCollection";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, createRef, useMemo } from "react";
 import Card from "./Card";
 import Left from "./Left";
 import Right from "./Right";
 
 export default function Row({ category, search }) {
-  const ref = useRef();
   const [media, setMedia] = useState([]);
-  const [direction, setDirection] = useState("");
-  const { collection } = useQueryCollection(category, null);
+  const reference = useMemo(() => media.map(() => createRef()), [media]);
+  const [limit, setLimit] = useState(100);
+  const [amount, setAmount] = useState(3);
+  const { collection } = useQueryCollection(category, null, limit);
 
   useEffect(() => {
     Search(search);
   }, [search]);
 
   useEffect(() => {
-    setMedia(collection);
-  }, [collection]);
+    if (reference.length > 1) {
+      reference[amount - 1].current.scrollIntoView({
+        block: "center",
+        inline: "center",
+        behavior: "smooth",
+      });
+    }
+  }, [amount]);
 
   useEffect(() => {
-    if (direction === "left") {
-      ref.current.scrollLeft -= 1500;
-    } else if (direction === "right") {
-      ref.current.scrollLeft += 1500;
-    }
-    setDirection("");
-  }, [direction]);
+    setMedia(collection);
+  }, [collection]);
 
   function Search(value) {
     const filtered = collection.filter((item) =>
@@ -37,17 +39,23 @@ export default function Row({ category, search }) {
   }
 
   return (
-    <div className="wrapper">
-      <h1>{category.charAt(0).toUpperCase() + category.slice(1)}</h1>
-      <div className="holder">
-        <Left setDirection={setDirection} />
-        <div className="row" ref={ref}>
-          {media.map((item) => (
-            <Card key={item.name} item={item} setDirection={setDirection} />
-          ))}
+    <>
+      {media.length > 0 && (
+        <div className="wrapper">
+          <h1>{category.charAt(0).toUpperCase() + category.slice(1)}</h1>
+
+          <div className="holder">
+            <Left hook={[amount, setAmount, reference.length]} />
+            <div className="row">
+              {media.map((item, i) => (
+                <Card reference={reference[i]} key={item.name} item={item} />
+              ))}
+            </div>
+
+            <Right hook={[amount, setAmount, reference.length]} />
+          </div>
         </div>
-        <Right setDirection={setDirection} />
-      </div>
-    </div>
+      )}
+    </>
   );
 }

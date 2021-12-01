@@ -17,7 +17,11 @@ export default function Account() {
   }
 
   return (
-    <div className="wrapper" onMouseEnter={onEnter} onMouseLeave={onLeave}>
+    <div
+      className="account-wrapper"
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+    >
       <div className="account">
         <div className="image-holder">
           <img src={avatar} />

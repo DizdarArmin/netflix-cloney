@@ -5,9 +5,21 @@ export default function Select({ hook }) {
   return (
     <label>
       {label}
-      <select value={state} onChange={(e) => set(e.target.value)}>
+      <select
+        defaultChecked="0"
+        value={state}
+        onChange={(e) => {
+          console.log(typeof e.target.value);
+          set(e.target.value);
+        }}
+      >
+        <option value="" selected="selected" hidden="hidden">
+          Choose here
+        </option>
         {numbers.map((item) => (
-          <option value={item}>{item}</option>
+          <option key={item} value={item}>
+            {item}
+          </option>
         ))}
       </select>
     </label>

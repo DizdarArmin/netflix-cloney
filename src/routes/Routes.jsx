@@ -10,6 +10,7 @@ import Manage from "../views/Manage";
 import Title from "../views/Title";
 import Add from "../views/Add";
 import PlaySerie from "../components/app/PlaySerie";
+import PlayMovie from "../components/app/PlayMovie";
 
 const routes = (isLogged, localUrl, userData) => [
   //HOME
@@ -57,6 +58,10 @@ const routes = (isLogged, localUrl, userData) => [
   },
   {
     path: `/play-:from-:file`,
+    element: isLogged ? <PlayMovie /> : null,
+  },
+  {
+    path: `/:id-:name-:season-:episode`,
     element: isLogged ? <PlaySerie /> : null,
   },
   // MANAGE

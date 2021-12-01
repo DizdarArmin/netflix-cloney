@@ -18,7 +18,7 @@ export default function Title() {
       <Navbar></Navbar>
       <div className="manage-container">
         <AddForm document={title} />
-        {category === "series" && <Series id={id} />}
+        {category === "series" && <Series id={title.id} />}
       </div>
     </div>
   );

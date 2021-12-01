@@ -9,6 +9,7 @@ export default function Search({ search, setSearch }) {
       setExpand("expand-search");
     } else {
       setExpand("reduce-search");
+      setSearch("");
     }
   }, [isSearching]);
 

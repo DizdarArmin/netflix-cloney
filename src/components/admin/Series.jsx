@@ -5,28 +5,32 @@ import Select from "./Select";
 import TextArea from "./TextArea";
 import ReactPlayer from "react-player";
 import Checkbox from "./Checkbox";
-import { createDocumentWithId, removeDocument } from "../../scripts/fireStore";
+import {
+  createDocument,
+  createDocumentWithId,
+  removeDocument,
+} from "../../scripts/fireStore";
 import { useState, useEffect } from "react";
 import useDocument from "../../hooks/useDocument";
 export default function Series({ id }) {
-  const [name, setName] = useState();
-  const [season, setSeason] = useState(1);
-  const [episode, setEpisode] = useState(1);
+  const [editEpisode, setEditEpisode] = useState({});
+  const [name, setName] = useState("");
+  const [season, setSeason] = useState(0);
+  const [episode, setEpisode] = useState(0);
   const [published, setPublished] = useState(false);
   const [video, setVideo] = useState();
   const [description, setDescription] = useState();
-  const [editEpisode, setEditEpisode] = useState({});
 
   const { document } = useDocument(
-    `/series/${id}/seasons`,
-    `S-${season}EP-${episode}`
+    `/series/${id}/seasons/${season}/episodes`,
+    episode
   );
 
   useEffect(() => {
     setName(editEpisode.name || "");
     setVideo(editEpisode.video || "");
     setDescription(editEpisode.description || "");
-    setPublished(editEpisode.published || "");
+    setPublished(editEpisode.published);
   }, [editEpisode]);
 
   useEffect(() => {
@@ -38,28 +42,32 @@ export default function Series({ id }) {
     description: description,
     published: published,
     video: video,
-    season: season,
-    episode: episode,
   };
   async function onSubmit(e) {
     e.preventDefault();
-    await createDocumentWithId(
-      `/series/${id}/seasons`,
-      `S-${season}EP-${episode}`,
+    await createDocumentWithId(`/series/${id}/seasons`, season, {
+      season: season,
+      published: published,
+    });
+    const response = await createDocumentWithId(
+      `/series/${id}/seasons/${season}/episodes`,
+      episode,
       data
     );
+    if (response === episode) {
+      alert("Success");
+    }
   }
   async function onDelete() {
     const confirm = window.confirm("Are you sure you want to delete this?");
     if (confirm) {
-      await removeDocument(`/series/${id}/seasons`, `S-${season}EP-${episode}`);
+      await removeDocument(`/series/${id}/seasons/${season}/episodes`, episode);
       window.location.reload();
     } else return null;
   }
   return (
     <form className="add-series" onSubmit={(e) => onSubmit(e)}>
       <h1>Series</h1>
-
       <div className="form">
         <div>
           <Input hook={[html.name, name, setName]} />
@@ -90,7 +98,7 @@ export default function Series({ id }) {
               </button>
             </div>
           </div>
-          <ReactPlayer controls width="100%" url={video} />
+          {document && <ReactPlayer controls width="100%" url={video} />}
         </div>
       </div>
     </form>

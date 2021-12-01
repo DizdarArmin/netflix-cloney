@@ -1,13 +1,17 @@
 import { useCallback, useEffect, useState } from "react";
-import { getQueryCollection } from "../scripts/fireStore";
+import { getNextPage, getQueryCollection } from "../scripts/fireStore";
 
-export default function useQueryCollection(collectionName, reload, amount) {
+export default function useQueryPaginateCollection(
+  collectionName,
+  reload,
+  amount
+) {
   const [collection, setCollection] = useState([]);
   const [collectionLoading, setLoading] = useState(false);
 
   const fetchData = useCallback(async (path, amount) => {
     try {
-      const data = await getQueryCollection(path, amount);
+      const data = await getNextPage(path, amount);
       setCollection(data);
       setLoading(true);
     } catch (error) {
@@ -20,5 +24,5 @@ export default function useQueryCollection(collectionName, reload, amount) {
     fetchData(collectionName, amount);
   }, [fetchData, collectionName, reload, amount]);
 
-  return { collection, collectionLoading };
+  return { next: collection, collectionLoading };
 }

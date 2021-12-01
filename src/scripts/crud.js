@@ -28,7 +28,7 @@ export async function draftCreator(html, image, category) {
     cast: html.cast.placeholder,
     thumbnail: image,
     thumbnailRef: null,
-    published: true,
+    published: false,
     category: category,
   };
   const document = await createDocument(category, data);

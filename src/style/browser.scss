@@ -16,57 +16,61 @@
 
 .expand {
   transition: all 1s;
-  transform: scale(1.3);
+  transform: scale(1.2) translateY(-50px);
+  border-radius: 5px;
+
   z-index: 1000;
-  transform: translateY(-20%);
+
   object-fit: contain;
 }
 .reduce {
   transition: all 1s;
   transform: scale(1);
 }
-
+.wrapper {
+  padding: 16px;
+  h1 {
+    font-size: 24px;
+  }
+}
 .row {
   display: flex;
-  flex-direction: row;
-  width: 100vw !important;
-  scroll-behavior: smooth;
-  position: relative;
-  overflow: hidden;
-  height: 350px;
-  padding: 100px 0;
-  width: 100vw;
+  width: 90vw;
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin: -150px -200px;
+  padding: 150px 0px;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 }
 
-.wrapper {
-  padding: 0 48px;
+.holder {
+  height: fit-content;
 }
 .card-wrapper {
+  margin-left: 8px;
+  width: 100%;
   position: relative;
-  margin: 8px;
+  width: fit-content;
 }
 
 .media-card {
   border-radius: 5px;
-  overflow: hidden;
-  z-index: 1;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   img {
     max-height: 158px;
     width: 280px;
     object-fit: cover;
   }
 }
-.content {
-  max-width: 100%;
-  margin-top: -5px;
-  padding: 16px;
-  background-color: #141414 !important;
-  z-index: 1000;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+
 .media-controls {
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
@@ -114,26 +118,19 @@
 }
 .left,
 .right {
-  position: relative;
-  width: 100px;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.left {
-  left: -70px;
-}
-.right {
-  right: -70px;
-}
 
 .holder {
   display: flex;
+
+  justify-content: space-between;
 }
 .app-nav {
   position: sticky;
-  margin-bottom: -250px;
 }
 .card-buttons {
   position: relative;
@@ -144,21 +141,34 @@
   margin-top: -90px;
   margin-bottom: 50px;
 }
-
-.App-hero {
-  border: 1px solid white;
-}
-
 .hero-buttons {
-  position: absolute;
-  height: 50vh;
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+}
+.app-hero {
+  position: relative;
+}
+
+.hero-content {
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 20%;
+  display: flex;
+  padding: 0 48px !important;
+  .top {
+    max-width: 400px;
+    margin-bottom: 5%;
+    text-shadow: 1px 1px black;
+    h1 {
+      margin-bottom: 5%;
+    }
+  }
+  justify-content: space-between;
+
   .left-side,
   .right-side {
     display: flex;
@@ -185,7 +195,6 @@
 .mute {
   background-color: khaki !important;
   .volume {
-    color: rebeccapurple !important;
   }
 }
 .info {
@@ -195,6 +204,7 @@
 .line {
   max-width: 248px;
   margin-bottom: 8px;
+  padding: 0 16px;
   font-size: 14px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -223,13 +233,6 @@
     background-color: transparent;
     padding: 8px 24px;
   }
-}
-
-.reduce-search {
-  width: 0px;
-}
-.expand-search {
-  width: 100%;
 }
 
 .account {
@@ -300,9 +303,7 @@
   overflow: hidden;
   color: white;
   border-radius: 15px;
-
   z-index: 1;
-  margin: 32px;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -360,22 +361,6 @@
   }
 }
 
-.fullScreen-modal {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-
-  width: 100vh;
-  height: 100%;
-
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-}
 .modal {
   min-height: 60vh;
   min-width: 60vw;
@@ -386,8 +371,95 @@
   text-align: right;
   width: 100%;
   font-size: 32px;
-
+  z-index: 10000 !important;
   color: rgb(155, 155, 155);
   transform: translateY(100%);
   cursor: pointer;
+  position: relative;
+  right: 16px;
+  top: 16px;
+}
+
+.hero-video {
+  margin-top: -70px;
+  margin-bottom: 70px;
+  position: relative;
+  height: fit-content;
+}
+
+.overlay-style-hover {
+  position: static;
+  max-height: 100%;
+  overflow: auto;
+  width: 100%;
+
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-style-hover {
+  height: fit-content;
+  position: absolute;
+  height: fit-content;
+  top: 0;
+}
+
+.hover-card {
+  transition: all 2s;
+  position: absolute;
+  top: 0;
+  background-color: #333 !important;
+  border-radius: 5px;
+}
+.expand-card {
+  transition: all 2s;
+  top: 0;
+  background-color: #333 !important;
+  border-radius: 5px;
+}
+
+.series-card {
+  display: flex;
+  padding: 16px 0 !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.series-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  select {
+    width: 200px;
+    background-color: #333;
+    color: white;
+    padding: 16px;
+    appearance: none;
+    font-size: 18px;
+  }
+}
+
+.series-player {
+  width: 60% !important;
+  min-width: 150px;
+}
+
+.episode {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: space-around;
+  font-size: 18px;
+}
+
+.name-time {
+  display: flex;
+  padding-left: 16px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.account-wrapper {
+  width: 80px;
 }

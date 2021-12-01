@@ -76,4 +76,14 @@
       flex-direction: column;
     }
   }
+
+  .hero-content {
+    .top {
+      max-width: 80% !important;
+      font-size: 9px !important;
+      h1 {
+        font-size: 16px !important;
+      }
+    }
+  }
 }

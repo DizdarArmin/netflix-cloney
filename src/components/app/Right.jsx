@@ -1,7 +1,14 @@
-export default function Right({ setDirection }) {
+export default function Right({ hook }) {
+  const [amount, setAmount, length] = hook;
+
+  function onClick() {
+    if (amount < length - 3) {
+      setAmount(amount + 3);
+    }
+  }
   return (
-    <div className="right" onClick={() => setDirection("right")}>
+    <a onClick={() => onClick()} className="right">
       <i className="fas fa-4x fa-chevron-right" />
-    </div>
+    </a>
   );
 }

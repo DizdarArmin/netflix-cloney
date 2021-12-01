@@ -32,6 +32,15 @@
       grid-template-columns: repeat(4, 1fr);
     }
   }
+  .hero-content {
+    .top {
+      max-width: 80% !important;
+      font-size: 36px !important;
+      h1 {
+        font-size: 72px !important;
+      }
+    }
+  }
 }
 @media only screen and (min-width: $desktop-min) and (max-width: $desktop-max) {
 }

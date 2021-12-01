@@ -15,7 +15,7 @@ export default function Browse({ language }) {
         <Search search={search} setSearch={setSearch} />
         <Account />
       </Navbar>
-      {!search.length > 0 && <Hero />}
+      {/*       {!search.length > 0 && <Hero />} */}
       <div className="rows">
         <Row category="movies" search={search} />
         <Row category="documentaries" search={search} />

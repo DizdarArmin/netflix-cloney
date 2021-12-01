@@ -32,21 +32,20 @@ export default function Hero() {
               playerVars: { modestbranding: 1, loop: 1 },
             },
           }}
-          style={{
-            maxHeight: "100%",
-          }}
           loop={true}
           muted={sound}
           playing={true}
           url={red}
         />
         {hero && (
-          <HeroButtons
-            hero={hero}
-            play={Play}
-            sound={sound}
-            setSound={setSound}
-          />
+          <>
+            <HeroButtons
+              hero={hero}
+              play={Play}
+              sound={sound}
+              setSound={setSound}
+            />{" "}
+          </>
         )}
       </div>
     </div>
